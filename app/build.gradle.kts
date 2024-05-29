@@ -37,6 +37,7 @@ android {
 
 dependencies {
 
+    implementation("org.opencv:opencv:4.9.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

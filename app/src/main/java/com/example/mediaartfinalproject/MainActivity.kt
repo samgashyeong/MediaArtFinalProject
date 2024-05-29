@@ -139,11 +139,8 @@ class MainActivity : AppCompatActivity() {
 
 
                         if (amplitude > 0) {
-                            // 진폭이 0 보다 크면 .. toDoSomething
-                            // 진폭이 0이하이면 데시벨이 -무한대로 나옵니다.
                             colorSum += db
                             colorCount+=1
-                            // 3초 후 다시 실행
                         }
 
                         Log.d(TAG, "run: ${db} ${colorSum} ${colorCount}")
