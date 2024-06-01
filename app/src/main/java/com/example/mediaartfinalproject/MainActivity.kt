@@ -5,6 +5,7 @@ import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.content.ContentValues
 import android.content.ContentValues.TAG
+import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.media.MediaRecorder
 import android.os.Build
@@ -27,6 +28,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.io.IOException
+import java.text.DecimalFormat
 import kotlin.math.floor
 import kotlin.math.log10
 
@@ -55,11 +57,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
         tvSpeechInput = findViewById(R.id.inputTextView)
         colorView = findViewById<View>(R.id.colorView)
-
-
+        ;
 
         if (ContextCompat.checkSelfPermission(
                 this,
@@ -115,7 +117,8 @@ class MainActivity : AppCompatActivity() {
             recorder = null
         }
         Log.d(TAG, "onStop: 평균값 : ${colorSum/colorCount}")
-        tvSpeechInput.text = (colorSum/colorCount).toString()
+
+        tvSpeechInput.text = DecimalFormat("#.########").format((colorSum/colorCount)).toString()
         checkColor(colorSum, colorCount)
         CoroutineScope(Dispatchers.Main).launch {
             delay(2000)
@@ -160,10 +163,15 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "checkColor: ${result}")
         nowColor = when {
             result < 55.0 -> R.color.sky1
-            result in 55.0..65.0 -> R.color.sky2
-            result in 65.0..75.0 -> R.color.sky3
-            result < 75.0 -> R.color.sky4
-            else -> R.color.sky1
+            result in 55.0..57.0 -> R.color.sky2
+            result in 57.0..61.0 -> R.color.sky3
+            result in 61.0..65.0 -> R.color.sky4
+            result in 65.0..69.0 -> R.color.sky5
+            result in 69.0..73.0 -> R.color.sky6
+            result in 73.0..77.0 -> R.color.sky7
+            result in 77.0..81.0 -> R.color.sky8
+            result >= 81.0 -> R.color.sky9
+            else -> R.color.sky9
         }
 
         startAnimation(currentColor, nowColor)
