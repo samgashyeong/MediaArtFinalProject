@@ -2,14 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="sky1">#B3E5FC</color>
-    <color name="sky2">#81D4FA</color>
-    <color name="sky3">#4FC3F7</color>
-    <color name="sky4">#29B6F6</color>
-    <color name="sky5">#03A9F4</color>
-    <color name="sky6">#039BE5</color>
-    <color name="sky7">#0288D1</color>
-    <color name="sky8">#0277BD</color>
-    <color name="sky9">#01579B</color>
+    <color name="sky1">#81D4FA</color>
+    <color name="sky2">#4FC3F7</color>
+    <color name="sky3">#29B6F6</color>
+    <color name="sky4">#03A9F4</color>
+    <color name="sky5">#039BE5</color>
+    <color name="sky6">#0288D1</color>
+    <color name="sky7">#0277BD</color>
+    <color name="sky8">#01579B</color>
+    <color name="sky9">#014472</color>
 
 </resources>
